@@ -24,6 +24,8 @@ import {
   ThemeProvider,
 } from "@mui/material/styles";
 
+var slugify = require("slugify");
+
 let theme = createTheme({});
 theme = responsiveFontSizes(theme);
 
@@ -156,7 +158,10 @@ function CoursesPage({ courses }) {
                           textDecoration: "none",
                           color: "black",
                         }}
-                        to={`/course/${id}`}
+                        to={`/course/${slugify(`${title} ${id}`, {
+                          lower: true,
+                          remove: /[*+~.,:()'"!@]/g,
+                        })}`}
                       >
                         <Button
                           color="inherit"

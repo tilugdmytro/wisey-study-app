@@ -8,7 +8,7 @@ function App() {
     <>
       <Routes>
         <Route path="/wisey-study-app" index element={<HomePage />} />
-        <Route path="/course/:courseId" element={<CourseDetailsPage />} />
+        <Route path="/course/:slug" element={<CourseDetailsPage />} />
       </Routes>
     </>
   );

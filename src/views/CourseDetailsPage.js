@@ -28,7 +28,10 @@ theme = responsiveFontSizes(theme);
 export default function CourseDetailsPage() {
   const [course, setCourse] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const { courseId } = useParams();
+  const { slug } = useParams();
+  const courseId = slug.match(
+    /[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/
+  )[0];
   const navigate = useNavigate();
 
   useEffect(() => {
