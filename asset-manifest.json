@@ -1,16 +1,13 @@
 {
   "files": {
-    "main.css": "/wisey-study-app/static/css/main.073c9b0a.css",
-    "main.js": "/wisey-study-app/static/js/main.40d00c62.js",
-    "static/js/787.1ec64a9a.chunk.js": "/wisey-study-app/static/js/787.1ec64a9a.chunk.js",
-    "static/media/logo.svg": "/wisey-study-app/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/wisey-study-app/static/css/main.7168e463.css",
+    "main.js": "/wisey-study-app/static/js/main.8876df77.js",
     "index.html": "/wisey-study-app/index.html",
-    "main.073c9b0a.css.map": "/wisey-study-app/static/css/main.073c9b0a.css.map",
-    "main.40d00c62.js.map": "/wisey-study-app/static/js/main.40d00c62.js.map",
-    "787.1ec64a9a.chunk.js.map": "/wisey-study-app/static/js/787.1ec64a9a.chunk.js.map"
+    "main.7168e463.css.map": "/wisey-study-app/static/css/main.7168e463.css.map",
+    "main.8876df77.js.map": "/wisey-study-app/static/js/main.8876df77.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.40d00c62.js"
+    "static/css/main.7168e463.css",
+    "static/js/main.8876df77.js"
   ]
 }
