@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { fetchCourseById } from "../services/api";
 import defaultImg from "../img/locked.jpg";
 import {
@@ -32,7 +32,7 @@ export default function CourseDetailsPage() {
   const courseId = slug.match(
     /[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}/
   )[0];
-  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     async function getCourseById() {
@@ -43,10 +43,6 @@ export default function CourseDetailsPage() {
     }
     getCourseById();
   }, [courseId]);
-
-  const onGoBack = () => {
-    navigate(`/wisey-study-app`);
-  };
 
   const { title, previewImageLink, lessons, description } = course;
 
@@ -119,15 +115,22 @@ export default function CourseDetailsPage() {
                 </Box>
               )
             )}
-            <Button
-              onClick={onGoBack}
-              color="inherit"
-              startIcon={<ArrowBackIcon />}
-              size="large"
-              sx={{ textTransform: "none", fontWeight: 700 }}
+            <Link
+              style={{
+                textDecoration: "none",
+                color: "black",
+              }}
+              to={location.state?.from ?? "/wisey-study-app"}
             >
-              Back to courses
-            </Button>
+              <Button
+                color="inherit"
+                startIcon={<ArrowBackIcon />}
+                size="large"
+                sx={{ textTransform: "none", fontWeight: 700 }}
+              >
+                Back to courses
+              </Button>
+            </Link>
           </Box>
         )}
       </ThemeProvider>

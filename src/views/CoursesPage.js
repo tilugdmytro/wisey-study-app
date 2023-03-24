@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import format from "date-fns/format";
 import parseISO from "date-fns/parseISO";
 import {
@@ -36,6 +36,8 @@ const dateChange = (string) => {
 };
 
 function CoursesPage({ courses }) {
+  const location = useLocation();
+
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -162,6 +164,7 @@ function CoursesPage({ courses }) {
                           lower: true,
                           remove: /[*+~.,:()'"!@]/g,
                         })}`}
+                        state={{ from: location }}
                       >
                         <Button
                           color="inherit"
